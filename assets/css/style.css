@@ -1,4 +1,18 @@
-/* === Base Reset === */
+/* =========================
+   THEME VARIABLES
+========================= */
+:root {
+  --bg-main: #0e1116;
+  --bg-secondary: #141821;
+  --text-main: #e6e6e6;
+  --text-muted: #a0a6b1;
+  --border-color: #222634;
+  --accent: #4f8cff;
+}
+
+/* =========================
+   RESET & BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,42 +25,74 @@ html {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
   font-size: 16px;
-}
-
-/* === Base Reset === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  font-size: 16px;
+  color: var(--text-main);
+  background-color: var(--bg-main);
 }
 
-#hero {
-  min-height: 100vh;
+/* =========================
+   CONTAINER (DESKTOP FIX)
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+/* =========================
+   HEADER & NAV
+========================= */
+header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#hero .intro {
+.logo {
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+/* =========================
+   HERO
+========================= */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 140px;
+}
+
+.intro {
   font-size: 14px;
   margin-bottom: 16px;
+  color: var(--text-muted);
 }
 
 #hero h1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 52px;
+  line-height: 1.15;
   margin-bottom: 24px;
 }
 
@@ -54,15 +100,27 @@ body {
   display: block;
   font-weight: 400;
   font-size: 32px;
+  color: var(--text-muted);
 }
 
-#hero .subtitle {
-  max-width: 600px;
+.subtitle {
+  max-width: 720px;
   margin-bottom: 48px;
+  color: var(--text-muted);
 }
 
-.scroll-hint {
-  font-size: 14px;
+/* =========================
+   ABOUT
+========================= */
+#about {
+  padding-top: 120px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  padding: 72px 0;
 }
 
 section h2 {
@@ -71,24 +129,73 @@ section h2 {
 }
 
 section p {
-  max-width: 700px;
+  max-width: 760px;
   margin-bottom: 16px;
+  color: var(--text-muted);
 }
 
-article {
-  margin-bottom: 40px;
+/* =========================
+   ACHIEVEMENTS
+========================= */
+.achievement-item {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  align-items: flex-start;
 }
 
+.achievement-image img {
+  width: 140px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.achievement-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+/* =========================
+   PROJECT
+========================= */
 article h3 {
   font-size: 20px;
   margin-bottom: 8px;
 }
 
+.project-card {
+  max-width: 700px;
+  background-color: var(--bg-secondary);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.project-image {
+  width: 100%;
+  margin: 24px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
 article a {
   text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
 }
 
-.achievement-item {
-  margin-bottom: 32px;
+article a:hover {
+  text-decoration: underline;
 }
 
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 40px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+}
