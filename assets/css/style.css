@@ -1,0 +1,94 @@
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero .intro {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+#hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+#hero h1 span {
+  display: block;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+#hero .subtitle {
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.scroll-hint {
+  font-size: 14px;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+section p {
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+article h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+article a {
+  text-decoration: none;
+}
+
+.achievement-item {
+  margin-bottom: 32px;
+}
+
