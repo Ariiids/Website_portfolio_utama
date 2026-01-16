@@ -32,7 +32,7 @@ body {
 }
 
 /* =========================
-   CONTAINER (DESKTOP FIX)
+   CONTAINER
 ========================= */
 .container {
   max-width: 1200px;
@@ -44,7 +44,10 @@ body {
    HEADER & NAV
 ========================= */
 header {
-  padding: 32px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-main);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -52,13 +55,25 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px 0;
 }
 
-.logo {
+/* LOGO */
+.logo-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
   font-weight: 600;
   text-transform: lowercase;
+  color: var(--text-muted);
+  cursor: pointer;
 }
 
+.logo-btn:hover {
+  color: var(--text-main);
+}
+
+/* NAV LINKS (DESKTOP) */
 .nav-links {
   list-style: none;
   display: flex;
@@ -75,11 +90,43 @@ nav {
   color: var(--text-main);
 }
 
+/* MENU BUTTON (MOBILE) */
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+  position: fixed;
+  top: 72px;
+  right: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 14px;
+}
+
 /* =========================
    HERO
 ========================= */
 #hero {
-  position: relative;
   min-height: 100vh;
   padding-top: 140px;
 }
@@ -110,13 +157,6 @@ nav {
 }
 
 /* =========================
-   ABOUT
-========================= */
-#about {
-  padding-top: 120px;
-}
-
-/* =========================
    SECTIONS
 ========================= */
 section {
@@ -135,20 +175,22 @@ section p {
 }
 
 /* =========================
-   ACHIEVEMENTS
+   ACHIEVEMENTS (DESKTOP)
 ========================= */
 .achievement-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 260px 1fr;
   gap: 32px;
-  margin-bottom: 48px;
-  align-items: flex-start;
+  align-items: start;
+  margin-bottom: 64px;
 }
 
 .achievement-image img {
-  width: 140px;
-  height: auto;
-  border-radius: 6px;
+  width: 100%;
+  max-width: 260px;
+  border-radius: 10px;
   border: 1px solid var(--border-color);
+  object-fit: cover;
 }
 
 .achievement-content h3 {
@@ -160,33 +202,28 @@ section p {
 /* =========================
    PROJECT
 ========================= */
-article h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
 .project-card {
   max-width: 700px;
   background-color: var(--bg-secondary);
   padding: 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--border-color);
 }
 
 .project-image {
   width: 100%;
   margin: 24px 0;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--border-color);
 }
 
-article a {
+.project-card a {
   text-decoration: none;
   color: var(--accent);
   font-weight: 500;
 }
 
-article a:hover {
+.project-card a:hover {
   text-decoration: underline;
 }
 
@@ -198,4 +235,113 @@ footer {
   font-size: 14px;
   color: var(--text-muted);
   border-top: 1px solid var(--border-color);
+}
+
+/* =========================
+   HERO ANIMATION
+========================= */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 36px;
+  }
+
+  #hero h1 span {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* ACHIEVEMENTS MOBILE */
+  .achievement-item {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-image img {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE MENU FIX (FINAL)
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  top: 64px;
+  right: 16px;
+
+  background-color: #0b0f14;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  padding: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+
+  z-index: 2000;
+}
+
+/* INI YANG SEBELUMNYA HILANG */
+.mobile-menu.open {
+  display: flex;
+}
+
+/* link styling */
+.mobile-menu a {
+  color: var(--text-main);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent);
 }

@@ -2,45 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ari</title>
+  <title>Ari Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
+<!-- ================= NAVIGATION ================= -->
+<header>
+  <div class="container">
     <nav>
-      <div class="logo">ari</div>
+      <button id="homeBtn" class="logo-btn" aria-label="Back to top">
+        ari
+      </button>
+
+      <!-- Desktop Nav -->
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a data-scroll="about">About</a></li>
+        <li><a data-scroll="achievements">Achievements</a></li>
+        <li><a data-scroll="projects">Projects</a></li>
+        <li><a data-scroll="contact">Contact</a></li>
       </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <p class="intro">Hi, my name is</p>
+<!-- ================= MOBILE MENU ================= -->
+<div class="mobile-menu" id="mobileMenu">
+  <a data-scroll="about">About</a>
+  <a data-scroll="achievements">Achievements</a>
+  <a data-scroll="projects">Projects</a>
+  <a data-scroll="contact">Contact</a>
+</div>
 
-    <h1>
-      Ari Dwi Saputra<br>
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <div class="container">
+    <p class="intro hero-animate delay-1">Hi, my name is</p>
+
+    <h1 class="hero-animate delay-2">
+      Ari Dwi Saputra
       <span>I build secure and reliable systems.</span>
     </h1>
 
-    <p class="subtitle">
+    <p class="subtitle hero-animate delay-3">
       Learning DevSecOps by understanding infrastructure,<br>
       security, and deployment end-to-end.
     </p>
+  </div>
+</section>
 
-    <p class="scroll-hint">↓ Scroll to explore</p>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container reveal-up">
     <h2>About Me</h2>
 
     <p>
@@ -53,44 +70,75 @@
       infrastructure and deployment to security awareness and long-term
       reliability.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Selected Projects</h2>
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements">
+  <div class="container">
+    <h2 class="reveal-up">Achievements</h2>
 
-    <article>
-      <h3>Project Name</h3>
-      <p>One sentence description.</p>
+    <div class="achievement-item reveal-up">
+      <div class="achievement-image">
+        <img src="assets/img/itnsakab2025.jpeg" alt="ITNSA 2025">
+      </div>
+      <div class="achievement-content">
+        <h3>ITNSA Banjarnegara 2025 — 1st Place</h3>
+        <p>Network Systems & Infrastructure Competition</p>
+      </div>
+    </div>
+
+    <div class="achievement-item reveal-up">
+      <div class="achievement-image">
+        <img src="assets/img/itnsakab2024.jpeg" alt="ITNSA 2024">
+      </div>
+      <div class="achievement-content">
+        <h3>ITNSA Banjarnegara 2024 — 2nd Place</h3>
+        <p>Networking fundamentals and system configuration challenges</p>
+      </div>
+    </div>
+
+    <div class="achievement-item reveal-up">
+      <div class="achievement-image">
+        <img src="assets/img/itnsaprov2025.jpeg" alt="ITNSA Central Java">
+      </div>
+      <div class="achievement-content">
+        <h3>ITNSA Central Java 2025</h3>
+        <p>District representative at provincial ITNSA competition</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="container">
+    <h2 class="reveal-up">Projects</h2>
+
+    <div class="project-card reveal-up">
+      <h3>Class Website Project</h3>
+
+      <img
+        src="assets/img/project-preview.jpg"
+        alt="Class Website Project Preview"
+        class="project-image"
+      >
+
       <p>
-        <a href="#">GitHub</a> →
-        <a href="#">Live</a>
+        A class website built as a real-world deployment practice,
+        focusing on structure, hosting, and domain configuration.
       </p>
-    </article>
-  </section>
 
-  <!-- Achievements Section -->
-  <section id="achievements">
-    <h2>Achievements</h2>
-
-    <div class="achievement-item">
-      <p><strong>ITNSA Banjarnegara 2025 — 1st Place</strong></p>
-      <p>Network Systems & Infrastructure Competition</p>
+      <a href="https://rks1c.arids.xyz" target="_blank">
+        Visit Project →
+      </a>
     </div>
+  </div>
+</section>
 
-    <div class="achievement-item">
-      <p><strong>ITNSA Banjarnegara 2024 — 2nd Place</strong></p>
-      <p>Networking fundamentals and system configuration challenges</p>
-    </div>
-
-    <div class="achievement-item">
-      <p><strong>ITNSA Central Java 2025</strong></p>
-      <p>District representative at provincial ITNSA competition</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container reveal-up">
     <h2>Get in Touch</h2>
 
     <p>
@@ -100,14 +148,16 @@
 
     <p>Email → <a href="mailto:aridspc@gmail.com">aridspc@gmail.com</a></p>
     <p>GitHub → <a href="https://github.com/Ariiids">@Ariiids</a></p>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
     <p>© 2026 Ari — Built with intention.</p>
-  </footer>
+  </div>
+</footer>
 
-  <script src="assets/js/main.js"></script>
-    
+<script src="assets/js/main.js"></script>
 </body>
 </html>
